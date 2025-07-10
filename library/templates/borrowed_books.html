@@ -1,0 +1,72 @@
+{% extends "master.html" %}
+{% block title %}
+Borrowed Books
+{% endblock %}
+{% block headercontent %}
+<body class="forms">
+      <nav class="navigation">
+         <a href="/avaliable">Available Books</a>
+        {% with user.userprofile.is_admin as is_admin %}
+        {% if is_admin %}
+        <a href="/add">Add Books</a>
+        <a href="{% url 'borrowedadmin' %}">Borrowed Books</a>
+        {% else %}
+        <a href="{% url 'borroweduser' %}">My Books</a>
+        {% endif %}       
+        {% endwith %}
+      </nav>
+    </div>
+{% endblock %}
+{% block content %}
+{% with user.userprofile.is_admin as is_admin %}
+{% if is_admin %}
+<h1>List Of Borrowed Books</h1><br>
+<div class="c2">
+    <table >
+        <tr>
+            <th>ISBN</th>
+            <th>Borrower Name</th>
+            <th>Email</th>
+            <th>Telephone Number</th>
+            <th>National ID</th>
+            <th>Start Date</th>
+            <th>Due Date</th>
+            <th>Remaining Days</th>
+        </tr>
+        {% for BorrowedBook in borrowed_books %}
+        <tr>
+            <td>{{ BorrowedBook.isbn }}</td>
+            <td>{{ BorrowedBook.borrower_name }}</td>
+            <td>{{ BorrowedBook.email }}</td>
+            <td>{{ BorrowedBook.telephone }}</td>
+            <td>{{ BorrowedBook.national_id }}</td>
+            <td>{{ BorrowedBook.start_date }}</td>
+            <td>{{ BorrowedBook.due_date }}</td>
+            <td>{{ BorrowedBook.remaining_days }}</td> 
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% else %}
+<h1>My Borrowed Books</h1>
+  <div class="c2">
+    <table>
+      <tr>
+        <th>ISBN</th>
+        <th>Start Date</th>
+        <th>Due Date</th>
+        <th>Remaining Days</th>
+      </tr>
+      {% for book in borrowed_books %}
+      <tr>
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.start_date }}</td>
+        <td>{{ book.due_date }}</td>
+        <td>{{ book.remaining_days }}</td> 
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% endif %}       
+  {% endwith %}
+{% endblock %}

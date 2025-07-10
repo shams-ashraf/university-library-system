@@ -1,0 +1,81 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}
+Home Page
+{% endblock %}
+{% block headercontent %}
+<body class="home">
+        {% if user.is_authenticated %}
+          {% with user.userprofile.is_admin as is_admin %}
+            {% if is_admin %}
+            <nav class="navigation">
+                <a href="/avaliable">Available Books</a>
+                <a href="/add">Add Books</a>
+                <a href="/borrowedadmin">Borrowed Books</a>
+            </nav>
+            <nav class="navigation">
+                <form id="logout-form" action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="login-signup-btn">Logout (Admin)</button>
+                </form>
+            {% else %}
+            <nav class="navigation">
+            <a href="/avaliable">Available Books</a>
+            <a href="/borroweduser">My Books</a>
+            </nav>
+            <nav class="navigation">
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="login-signup-btn">Logout</button>
+                </form>
+            </nav>
+            {% endif %}
+        {% endwith %}
+    {% else %}
+        <nav class="navigation">
+        <a href="{% url 'login' %}" method="get"> 
+            <button type="submit" class="login-signup-btn">Login</button>
+        </a>
+        <a href="{% url 'signup' %}" method="get">
+            <button type="submit" class="login-signup-btn">Sign Up</button>
+        </a>
+        </nav>
+    {% endif %}
+{% endblock %}
+{% block content %}
+<br><br><br>
+<section class="home">
+</section>
+<section class="main">
+    <h2>ABOUT US</h2>
+    <div class="about-us">
+        <p>
+            Welcome to TreasuredTexts Treasury, your virtual haven for literary exploration and knowledge discovery.
+            Established with a passion for fostering a love of reading and learning, TreasuredTexts Treasury is
+            dedicated to providing a diverse array of resources, from classic literature to contemporary works, all
+            within the digital realm.
+            Our passion for literature runs deep, and we believe in the transformative power of words to inspire,
+            educate, and entertain. Whether you're a seasoned bibliophile or just beginning your reading journey,
+            TreasuredTexts Treasury offers something for every literary palate.
+            Behind TreasuredTexts Treasury is a team of dedicated bibliophiles, technologists, and educators who are
+            committed to providing an exceptional online library experience. We meticulously curate our collection
+            to ensure that it reflects the richness and diversity of the literary world, spanning genres, cultures,
+            and time periods.
+        </p>
+        <p>
+            Navigating through the virtual shelves of TreasuredTexts Treasury is a breeze, thanks to our intuitive
+            interface and advanced search features. Whether you're in search of a beloved classic, a contemporary
+            bestseller, or an obscure literary treasure, you'll find it at your fingertips.
+            But TreasuredTexts Treasury is more than just a repository of books; it's a thriving community of
+            readers who share a passion for the written word. Through virtual book clubs, author interviews, and
+            online discussions, we provide opportunities for readers to connect, engage, and explore the world of
+            literature together.
+            As we continue to grow and evolve, our mission remains steadfast: to celebrate the beauty and power of
+            literature, and to inspire a lifelong love of reading in readers everywhere. Join us at TreasuredTexts
+            Treasury as we embark on a journey of discovery, enlightenment, and endless literary adventure.
+        </p>
+    </div>
+</section>
+<br><br><br><br><br>
+{% endblock %}
+

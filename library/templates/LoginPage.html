@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<body class="forms">
+<h1>Login</h1>
+<div class="c">
+    <form id="login-form" class="form" method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="input-group">
+            <label for="userid">Username:</label>
+            {{ form.userid }}
+        </div>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            {{ form.password }}
+        </div>
+        <input class="btn" type="submit" value="Login">
+        <div style="display: block;">
+            <a href="/password">Forgot Password?</a>
+            <p id="signup">You don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+        </div>
+    </form>
+</div>
+<script src="{% static 'javaScript/login.js' %}"></script>
+</body>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}
+Available Books
+{% endblock %}
+{% block headercontent %}
+<body class="p">
+    <nav class="navigation">
+        <form class="form" method="get" action="{% url 'search' %}">
+            <div class="search-box">
+                <input type="text" id="search-input" name="search-input" placeholder="Search" />
+                <select id="search-option" name="search-option">
+                    <option value="title">Title</option>
+                    <option value="author">Author</option>
+                    <option value="category">Category</option>
+                </select>
+                <button type="submit" id="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" width="15" height="15">
+                        <path fill="#fff"
+                              d="M16.354 14.646a6 6 0 1 1 1.414-1.414l3.535 3.536a1 1 0 0 1-1.415 1.415l-3.536-3.537zM15 10a5 5 0 1 0-10 0 5 5 0 0 0 10 0z" />
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </nav>
+    <nav class="navigation">
+        {% with user.userprofile.is_admin as is_admin %}
+        {% if is_admin %}
+        <a href="/avaliable">Available</a>
+        <a href="{% url 'add' %}">Add Books</a>
+        <a href="{% url 'borrowedadmin' %}">Borrowed </a>
+
+        {% else %}
+        <a href="/avaliable">Available books</a>
+        <a href="{% url 'borroweduser' %}">My Books</a>
+
+        {% endif %}
+        {% endwith %}
+    </nav>
+{% endblock %}
+{% block content %}
+    <h1>Available Books</h1>
+    {% if message %}
+    <div class="c3">
+    <p class="error-msg">{{ message }}</p>
+    </div>
+    {% else %}
+    <ul class="books-list">
+        {% for book in books %}
+        <li class="book-item">
+            <div class="c2">
+                <div class="c2">
+                <h2><p><strong>ISBN:</strong> {{ book.isbn }}</p></h2>
+                <h2 class="underlined-title"><a href="{% url 'detail' book.pk %}">{{ book.title }}</a></h2> <!-- Add class for underlined title -->
+                {% if book.quantity %}
+                    <h2 class="available">Available</h2>
+                {% else %}
+                    <h2 class="unavailable">Not Available</h2>
+                {% endif %}
+            </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock %}

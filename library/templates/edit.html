@@ -1,0 +1,59 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}
+    Edit Book
+{% endblock %}
+{% block headercontent %}
+<body class="forms">
+            <nav class="navigation">
+                <a href="/avaliable">Available books</a>
+                <a href="/add">Add a book</a>
+                <a href="/borrowedadmin">Borrowed Books</a>
+            </nav>
+        </div>
+{% endblock %}
+{% block content %}
+        <h1>Edit Details</h1>
+    <div class="c">
+        <form id="edit-book-form" method="post">
+            {% csrf_token %}
+            <div class="input-group">
+                {{ form.isbn.label_tag }}
+                {{ form.isbn }}
+            </div>
+            <div class="input-group">
+                {{ form.title.label_tag }}
+                {{ form.title}}
+            </div>
+            <div class="input-group">
+                {{ form.author.label_tag }}
+                {{ form.author}}
+            </div>
+            <div class="input-group">
+                {{ form.published_year.label_tag }}
+                {{ form.published_year}}
+            </div>
+            <div class="input-group">
+                {{ form.publisher.label_tag }}
+                {{ form.publisher}}
+            </div>
+            <div class="input-group">
+                {{ form.quantity.label_tag }}
+                {{ form.quantity}}
+            </div>
+            <div class="input-group">
+                {{ form.category.label_tag }}
+                {{ form.category}}
+            </div>
+            <div class="input-group">
+                {{ form.language.label_tag }}
+                {{ form.language}}
+            </div>
+                {{ form.description.label_tag }}<br><br>
+                {{ form.description }}
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+    <script src="{% static 'javaScript/edit.js' %}"></script>
+{% endblock %}

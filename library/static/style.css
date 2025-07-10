@@ -1,0 +1,771 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: rgba(5, 27, 34, 0.3);
+    border-radius: 10px;
+}
+
+header .top {
+    backdrop-filter: blur(20px);
+    width: 100%;
+    display: flex;
+    position: fixed;
+    backdrop-filter: blur(20px);
+    z-index: 100000;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 200px;
+    background: #532f22;
+    margin-bottom: 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+.logo a:hover {
+    color: #CBB89D;
+}
+
+.navigation a {
+    position: relative;
+    margin-right: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+    transform-origin: right;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+
+    transform-origin: left;
+}
+
+.navigation .login-signup-btn {
+    width: 120px;
+    height: 50px;
+    border-radius: 6px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    border: 1px solid white;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 0.5s ease;
+}
+
+.navigation .login-signup-btn:hover {
+    color: #3f2b1d;
+    background: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.forms {
+    font-family: Georgia, serif;
+    background-image: url("https://www.tovima.com/wp-content/uploads/2023/12/14/OTDIH-1536x837.jpg");
+    color: #3f2b1d;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+}
+
+body.p {
+    font-family: Georgia, serif;
+    background-image: url("https://www.tovima.com/wp-content/uploads/2023/12/14/OTDIH-1536x837.jpg");
+    color: #3f2b1d;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 50px auto;
+    padding: 20px;
+    font-size: 20px;
+}
+
+div.c {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 50%;
+    line-height: 100%;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+    margin: auto;
+}
+
+div.c2 {
+    background-color: rgba(241, 234, 234, 0.3);
+    width: auto;
+    padding: 28px;
+    border-radius: 10px;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    align-items: center;
+}
+div.c3 {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 35px;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    line-height: 100%;
+    width: 80%;
+    padding: 29px;
+    margin: auto;
+}
+h1 {
+    font-family: Georgia, serif;
+    color: #fff;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 25px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+h3 {
+    font-family: Georgia, serif;
+    color: #532f22;
+    ;
+}
+#search-input {
+    flex: 1;
+    padding: 10px;
+    width: 70%;
+    line-height: 30%;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #77a9b9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #407080;
+}
+
+body::before {
+    background-position: center;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+img {
+    width: auto;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    margin-right: 20px;
+}
+
+.book {
+    display: flex;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.book-details {
+    flex: 3;
+    margin-bottom: 10%;
+    margin-top: 4%;
+}
+
+.input-group {
+    flex: 0 0 48%;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.input-group input{
+    width: 100%;
+    height: 45px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.input {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+}
+
+.input label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.input input{
+    width: 100%;
+    height: 45px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #77a9b9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #407080;
+}
+
+body::before {
+    background-position: center;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+img {
+    width: auto;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto;
+    margin-right: 20px;
+}
+
+.book {
+    display: flex;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.book-details {
+    flex: 2;
+    margin-bottom: 14%;
+
+}
+
+input[type="submit"],
+input[type="reset"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #532f22;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #806044;
+
+}
+textarea {
+    text-align: left;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#password {
+    width: 88%;
+    height: 45px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+label {
+    margin-bottom: 1px;
+    font-weight: bold;
+}
+
+#signup {
+    margin-top: 30px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+}
+
+
+.checkbox {
+    margin-top: 20px;
+    margin-right: 150px;
+}
+
+#D label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#D textarea {
+    text-align: left;
+    width: 130%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: rgba(7, 32, 32, 0.5);
+    color: #fff;
+}
+
+body.home {
+    font-family: Georgia, serif;
+    background-image: url("https://www.tovima.com/wp-content/uploads/2023/12/14/OTDIH-1536x837.jpg");
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+}
+
+body.home::before {
+    background-position: center;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+section {
+    margin-top: 60px;
+    color: white;
+}
+
+.trending-books {
+    padding: 20px 0;
+}
+
+.trending-books h2 {
+    text-align: center;
+    color: #fff;
+}
+
+
+.btn {
+    margin-bottom: 80px;
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: #532f22;
+    font-size: 1.7rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.btn:hover {
+    color: white;
+    background: #806044;
+}
+
+.home {
+    margin-top: 100px;
+    padding: 0px 100px;
+}
+
+.home .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    flex-direction: row;
+}
+
+.home .row .content {
+    flex: 1 1 42rem;
+
+}
+
+.trending-books {
+    background-color: rgba(241, 234, 234, 0.3);
+    width: auto;
+    height: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.trending-books img {
+    height: 20rem;
+    object-fit: cover;
+    margin-left: 20px;
+    transition: 0.5s;
+}
+
+.trending-books img:hover {
+    transform: scale(.9);
+}
+
+.books {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    width: fit-content;
+}
+
+.book-info .name-price {
+    margin-left: 16px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    gap: 0.5rem;
+    font-size: 17px;
+}
+
+.book-details {
+    padding-left: 30px;
+}
+
+.book-details button {
+    width: 120px;
+    height: 50px;
+    border-radius: 6px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    border: 1px solid white;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: 0.5s ease;
+    margin-right: 10px;
+    margin-top: 10px
+}
+
+.main {
+    background-color: rgba(241, 234, 234, 0.3);
+    width: auto;
+    height: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+    margin: auto;
+}
+
+.main h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.about-us p {
+    margin-bottom: 40px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: white;
+}
+
+
+.details {
+    color: #fff;
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+.social-icons {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-left: 97px;
+}
+
+.social-icons .icon {
+    justify-content: space-between;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+svg {
+    font-size: 1.7em;
+}
+
+.book-details .available {
+    color: rgb(22, 83, 22); /* Color for available books */
+}
+
+.book-details .unavailable {
+    color: rgb(161, 30, 30); /* Color for unavailable books */
+}
+
+.delete-form {
+    display: inline-block;
+}
+
+.delete-button {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+    padding: 8px 16px; /* Padding */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* Darker red background on hover */
+}
+
+.contact-info i {
+    font-size: 1.3em;
+    transition: .4s ease;
+}
+
+.contact-info .fa-facebook:hover {
+    color: #4267B2;
+
+}
+.contact-info a {
+    text-decoration: none;
+    color: white;
+
+}
+footer.contact h2 {
+    text-align: center;
+    color: #fff;
+}
+footer.contact {
+    width: 100%;
+    height: 190px;
+    padding: 30px 200px;
+    background: #532f22;
+    bottom: 0;
+    margin-top: 10px;
+}
+
+.contact-info ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.contact-info ul li {
+    display: flex;
+    list-style: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.contact-info ul li .info {
+    color: white;
+    font-weight: 500;
+
+}
+
+.contact-info .fa-envelope:hover {
+    color: rgb(234, 234, 125);
+}
+
+.contact-info .fa-phone:hover {
+    color: #f9b17a;
+}
+
+
+#search-option {
+    padding: 8px;
+    border: none; 
+    border-radius: 4px; 
+    margin-right: 10px; 
+}
+
+h2 {
+    padding-bottom: 29px; /* Add padding to separate the text from the line */
+    margin-bottom: 10px;
+     /* Add margin to create space between elements */
+}
+
+h2 a {
+    text-decoration: none; /* Remove underline from the link */
+    color: #2e0e0e;
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+h2 a:hover {
+    color: #1c5ca0; /* Change link color on hover */
+}
+
+
+.custom-file-input {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* Add this to your CSS file */
+
+/* Add this to your CSS file */
+
+.books-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.book-item {
+    flex: 0 1 calc(33.33% - 10px); /* Three items per row with a small gap */
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+.book-details {
+    padding: 10px;
+    border: 1px  rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color:  rgba(255, 255, 255, 0.3); /* Optional: Add a background color for better visibility */
+}
+
+.book-details h2 {
+    margin: 5px 0;
+}
+
+.available {
+    color: green;
+}
+
+.unavailable {
+    color: red;
+}
+
+/* CSS styles for underlined title */
+.underlined-title {
+    text-decoration: underline;
+}
+
+.underlined-title a {
+    color: #570000;
+    text-decoration: none; /* Remove default underline from links */
+}
+
+.underlined-title a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+

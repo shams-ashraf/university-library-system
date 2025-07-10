@@ -1,0 +1,59 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}
+{{ book.title }} - Details
+{% endblock %}
+{% block headercontent %}
+<body class="p">
+    <nav class="navigation">
+                <a href="/avaliable">Available books</a>
+                 {% with user.userprofile.is_admin as is_admin %}
+                 {% if is_admin %}
+                 <a href="/borrowedadmin">borrowed Books</a>
+                 {% else %}
+                 <a href="{% url 'borroweduser' %}">My Books</a>
+                 {% endif %}
+                 {% endwith %}
+            </nav>
+        </div>
+{% endblock %}
+{% block content %}
+<h1>Details Books</h1>
+<div class="c2">
+        <div class="c2">
+        <ul>
+            <li>
+                <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+                <p><strong>Author:</strong> {{ book.author }}</p>
+                <p><strong>Published Year:</strong> {{ book.published_year }}</p>
+                <p><strong>Publisher:</strong> {{ book.publisher }}</p>
+                <p><strong>Quantity:</strong> {{ book.quantity }}</p>
+                <p><strong>Category:</strong> {{ book.category }}</p>
+                <p><strong>Language:</strong> {{ book.language }}</p>
+                <p><strong>Description:</strong> {{ book.description }}</p><br>
+                {% with user.userprofile.is_admin as is_admin %}
+                {% if is_admin %}
+                    <div class="button-group">
+                    <form action="{% url 'edit' book.pk %}" method="get">
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form action="{% url 'delete' book.pk %}" method="post" id="delete-form">
+                        {% csrf_token %}
+                        <button type="submit" class="delete-button">Delete</button>
+                        <input type="hidden" id="confirm-delete" name="confirm_delete" value="false">
+                    </form>
+                    {% else %}
+                    {% if book.quantity %}:
+                     <form action="{% url 'borrow' %}" method="get">
+                        {% csrf_token %}
+                        <button type="submit">Borrow</button>
+                     </form>
+                     {% endif %}
+                {% endif %}       
+                {% endwith %}
+            </li>
+        </ul>
+        </div>
+</div>
+<script src="{% static 'javascript/delete.js' %}" defer></script>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block title %}
+  Borrow Book
+{% endblock %}
+
+{% block headercontent %}
+<body class="forms">
+  <nav class="navigation"> 
+    <a href="/avaliable">Available books</a> 
+    <a href="/borroweduser">My Books</a> 
+  </nav> 
+</body> 
+{% endblock %}
+
+{% block content %}
+  <h1>Borrow Book</h1>
+  <div class="c">
+    <form id="borrow" class="form" method="POST" action="{% url 'borrow' %}">
+      {% csrf_token %}
+      <div class="input-group">
+        {{ form.isbn.label_tag }}
+        {{ form.isbn }}
+        {% if form.isbn.errors %}
+          <div class="error-message">
+            {% for error in form.isbn.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="input-group">
+        {{ form.borrower_name.label_tag }}
+        {{ form.borrower_name }}
+        {% if form.borrower_name.errors %}
+          <div class="error-message">
+            {% for error in form.borrower_name.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="input-group">
+        {{ form.telephone.label_tag }}
+        {{ form.telephone }}
+        {% if form.telephone.errors %}
+          <div class="error-message">
+            {% for error in form.telephone.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="input-group">
+        {{ form.national_id.label_tag }}
+        {{ form.national_id }}
+        {% if form.national_id.errors %}
+          <div class="error-message">
+            {% for error in form.national_id.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="input-group">
+        {{ form.start_date.label_tag }}
+        {{ form.start_date }}
+        {% if form.start_date.errors %}
+          <div class="error-message">
+            {% for error in form.start_date.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="input-group">
+        {{ form.due_date.label_tag }}
+        {{ form.due_date }}
+        {% if form.due_date.errors %}
+          <div class="error-message">
+            {% for error in form.due_date.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="input">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {% if form.email.errors %}
+          <div class="error-message">
+            {% for error in form.email.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <script src="{% static 'javaScript/borrow.js' %}"></script>
+{% endblock %}
